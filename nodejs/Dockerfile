@@ -8,11 +8,11 @@ RUN     apt-get update && \
 		tzdata \
 		curl \
 		ca-certificates \
-    		build-essential && \
-	curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+		software-properties-common \
+		build-essential && \
+	curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 	apt-get update && \
 	apt-get --quiet --yes --no-install-recommends install \
-		gyp \
-		nodejs && \
+		nodejs &&\ 
 	apt-get -q -y clean && \	
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
